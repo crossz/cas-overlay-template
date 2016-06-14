@@ -1,3 +1,25 @@
+My Customization:
+
+* cas-overlay-template
+    https://github.com/crossz/cas-overlay-template
+* docker using cas-overlay-template
+    https://github.com/apereo/cas/tree/dockerized-caswebapp
+
+### Notes:
+
+1. build and run: mvn clean package jetty:run-forked
+2. customized config in: 
+    a) src/main/webapp/WEB-INF/ (for beans and property files location etc.)
+    b) pom.xml ( for adding other jars: mysql-connector; cas-server-support-jdbc)
+
+    this is the way of "mvn package", which will override these xml/proerties files in the war (cas-server-webapp is declared in the pom.xml); 
+
+    So we just change the "src/main/webapp/WEB-INF/deployerConfigContext.xml" , then mvn clean package to create a new war and corresponding webapp.
+
+3. copy own "etc" directory into /etc/cas, /etc/cas/jetty
+
+
+
 CAS Overlay Template
 ============================
 
